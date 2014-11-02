@@ -1,1 +1,1 @@
-* Bare Bones Docker in Docker template.
+# Bare Bones Docker in Docker template.
