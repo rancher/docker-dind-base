@@ -7,3 +7,7 @@ RUN apt-get update  && apt-get install -y \
     wget
 
 RUN rm -rf /var/lib/apt/lists/*
+
+ADD ./wrapdocker_exit.sh /usr/local/bin/wrapdocker_exit.sh
+
+ENTRYPOINT [ "/usr/local/bin/wrapdocker_exit.sh" ]
