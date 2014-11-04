@@ -8,6 +8,6 @@ RUN apt-get update  && apt-get install -y \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ADD ./wrapdocker_exit.sh /usr/local/bin/wrapdocker_exit.sh
+RUN sed -i 's/exec\ bash/sleep\ 1\ \&\&\ exec\ "$@"/' /usr/local/bin/wrapdocker
 
-ENTRYPOINT [ "/usr/local/bin/wrapdocker_exit.sh" ]
+ENTRYPOINT [ "bash", "-x", "/usr/local/bin/wrapdocker" ]
