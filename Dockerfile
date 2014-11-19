@@ -13,8 +13,4 @@ ENV LC_ALL en_US.UTF-8
 
 VOLUME /scratch
 
-RUN sed -i 's/exec\ bash/sleep\ 1\ \&\&\ exec\ "$@"/' /usr/local/bin/wrapdocker
-
-ENTRYPOINT [ "/usr/local/bin/wrapdocker" ]
-
-CMD ["/bin/bash"]
+CMD ["/usr/local/bin/wrapdocker"]
