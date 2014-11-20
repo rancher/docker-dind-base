@@ -100,6 +100,6 @@ if [ $i -lt 20 ]
 then
     exit 0
 else
-    echo "Docker can not be reached"
+    echo "Docker can not be reached" 1>&2
     exit 1
 fi
