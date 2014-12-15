@@ -12,6 +12,8 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 ADD ./wrapdocker /usr/local/bin/wrapdocker
+ADD ./vendor/docker /usr/bin/docker
+RUN chmod +x /usr/bin/docker
 
 VOLUME /scratch
 
