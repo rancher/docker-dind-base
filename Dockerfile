@@ -15,6 +15,8 @@ ADD ./wrapdocker /usr/local/bin/wrapdocker
 ADD ./vendor/docker /usr/bin/docker
 RUN chmod +x /usr/bin/docker
 
+RUN curl https://sdk.cloud.google.com | bash
+
 VOLUME /scratch
 
 CMD [ "/bin/bash" ]
