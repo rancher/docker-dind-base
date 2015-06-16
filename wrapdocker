@@ -83,13 +83,15 @@ popd >/dev/null
 # delete it so that docker can start.
 rm -rf /var/run/docker.pid
 
-export DOCKER_DRIVER=vfs
-for i in overlay aufs; do
-    if grep -q $i /proc/filesystems; then
-        export DOCKER_DRIVER=$i
-        break
-    fi
-done
+if [ -z ${DOCKER_DRIVER} ]; then
+    export DOCKER_DRIVER=vfs
+    for i in overlay aufs; do
+        if grep -q $i /proc/filesystems; then
+            export DOCKER_DRIVER=$i
+            break
+        fi
+    done
+fi
 
 # Start Docker Daemon
 docker -d $DOCKER_DAEMON_ARGS &
