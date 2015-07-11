@@ -18,9 +18,9 @@ before trying to start any containers within docker.
 
 ## Contact
 For bugs, questions, comments, corrections, suggestions, etc., open an issue in
- [rancherio/rancher](//github.com/rancherio/rancher/issues) with a title starting with `[docker-dind-base] `.
+ [rancher/rancher](//github.com/rancher/rancher/issues) with a title starting with `[docker-dind-base] `.
 
-Or just [click here](//github.com/rancherio/rancher/issues/new?title=%5Bdocker-dind-base%5D%20) to create a new issue.
+Or just [click here](//github.com/rancher/rancher/issues/new?title=%5Bdocker-dind-base%5D%20) to create a new issue.
 
 # License
 Copyright (c) 2014-2015 [Rancher Labs, Inc.](http://rancher.com)
