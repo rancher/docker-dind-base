@@ -21,11 +21,11 @@ ADD ./wrapdocker /usr/local/bin/wrapdocker
 ADD ./vendor/docker /usr/bin/docker
 RUN chmod +x /usr/bin/docker
 
-ENV GOLANG_VERSION 1.4.2
-RUN curl -sSL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz \
-		| tar -v -C /usr/src -xz
-RUN cd /usr/src/go/src && ./make.bash --no-clean 2>&1
-ENV PATH /usr/src/go/bin:$PATH
+
+ENV GOLANG_VERSION 1.5
+RUN curl -sSL https://storage.googleapis.com/golang/go$GOLANG_VERSION.linux-amd64.tar.gz \
+		| tar -v -C /usr/local -xz
+ENV PATH /usr/local/go/bin:$PATH
 
 VOLUME /scratch
 
