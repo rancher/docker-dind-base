@@ -8,6 +8,7 @@ RUN apt-get update  && apt-get install -y \
     iptables \
     git \
     curl \
+    xz-utils \
     wget \
     gcc \
     libc6-dev \
