@@ -21,15 +21,15 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV TERM linux
 
-ADD ./wrapdocker /usr/local/bin/wrapdocker
-ADD https://get.docker.com/builds/Linux/x86_64/docker-1.9.0 /usr/bin/docker
-RUN chmod +x /usr/bin/docker
-
-ENV GOLANG_VERSION 1.4.2
+ENV GOLANG_VERSION 1.4.3
 RUN curl -sSL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz \
 		| tar -v -C /usr/src -xz
 RUN cd /usr/src/go/src && ./make.bash --no-clean 2>&1
 ENV PATH /usr/src/go/bin:$PATH
+
+ADD ./wrapdocker /usr/local/bin/wrapdocker
+RUN curl -sL https://get.docker.com/builds/Linux/x86_64/docker-1.9.0 > /usr/bin/docker
+RUN chmod +x /usr/bin/docker
 
 VOLUME /scratch
 VOLUME /var/lib/docker
