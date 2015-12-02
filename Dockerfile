@@ -23,7 +23,7 @@ ENV LC_ALL en_US.UTF-8
 ENV TERM linux
 
 ADD ./wrapdocker /usr/local/bin/wrapdocker
-ADD https://get.docker.com/builds/Linux/x86_64/docker-1.9.0 /usr/bin/docker
+ADD https://get.docker.com/builds/Linux/x86_64/docker-1.9.1 /usr/bin/docker
 RUN chmod +x /usr/bin/docker
 
 ENV GOLANG_VERSION 1.4.2
