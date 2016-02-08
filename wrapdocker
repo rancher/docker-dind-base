@@ -94,7 +94,7 @@ if [ -z ${DOCKER_DRIVER} ]; then
 fi
 
 # Start Docker Daemon
-docker -d $DOCKER_DAEMON_ARGS &
+docker daemon $DOCKER_DAEMON_ARGS &
 
 # Verify that it started
 for ((i=0;i<20;i++))
