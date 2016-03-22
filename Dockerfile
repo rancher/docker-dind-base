@@ -1,4 +1,4 @@
-FROM ubuntu:14.04.3
+FROM ubuntu:14.04.4
 MAINTAINER Bill Maxwell <bill@rancher.com> @cloudnautique
 
 RUN apt-get update  && apt-get install -y \
@@ -24,7 +24,7 @@ ENV TERM linux
 ENV GOLANG_VERSION 1.4.2
 
 ADD ./wrapdocker /usr/local/bin/wrapdocker
-ADD https://get.docker.com/builds/Linux/x86_64/docker-1.10.0 /usr/bin/docker
+ADD https://get.docker.com/builds/Linux/x86_64/docker-1.10.3 /usr/bin/docker
 RUN chmod +x /usr/bin/docker
 
 RUN curl -sSL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz \
